@@ -1,0 +1,13 @@
+VMware 14.1.1安装系统Ubuntu 14.04.5，完成后想在win7端通过ssh远程访问，提示
+“The host '192.168.1.126' is unreachable.
+the host may be down,or there may be a problem with the network connection.
+Sometimes such problems can also be caused by a misconfigured firewall。”
+
+检查：1.防火墙已关   2.主机与Ubuntu可相互ping通
+在Ubuntu的root模式下命令行输入“service ssh”，显示“ssh:unrecognized service”，意识到是Ubuntu上没有安装ssh服务。
+安装ssh服务：1.apt-get install openssh-server(安装) 2.“/etc/init.d/ssh start”或“/etc/init.d/ssh restart”（开启）
+检查ssh状态：“ps -e|grep ssh”，显示“1053 ? 00:00:00 ssh”，表示ssh正常。
+检查ssh状态：“/etc/init.d/ssh status”，显示“ssh start/running,process 1053”，表示ssh已开启。
+关闭ssh命令：“/etc/init.d/ssh stop”
+
+若还有问题，重启Ubuntu。
