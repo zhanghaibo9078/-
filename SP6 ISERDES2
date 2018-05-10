@@ -1,0 +1,1 @@
+clk0和clk1需要时io时钟，clk需要时Global时钟。时钟生成和iodelay2和iserdes2放在同一个文件。
