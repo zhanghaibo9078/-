@@ -1,0 +1,4 @@
+1.打开git bash输入：ssh-keygen -t rsa -b 4096 -C "zhanghaibo9078@163.com"，一路回车~~
+2.在git bash输入：code ~/.ssh/id_rsa.pub，弹出文件id_rsa.pub及ssh码（很长一段）
+3.登陆github账户，打开账户->Settings->SSH and GPG keys->New SSH key->粘贴，完成
+4.远程拉取项目：git clone git@github.com:Levikov/MonoVision.git
