@@ -1,0 +1,11 @@
+无法读取EXCEL中的数据单元格。有数据，但是读出来全是空值。
+解决方法：
+1.在导入数据连接字符串中，将IMEX=1加入，“Provider=Microsoft.Jet.OLEDB.4.0;Data Source="C:\Data.xls";Extended Properties="Excel 8.0;HDR=Yes;IMEX=1; ”，这样就可以。
+注：
+“HDR=Yes;”指示第一行中包含列名，而不是数据;
+“IMEX=1;”通知驱动程序始终将“互混”数据列作为文本读取。
+两者必须一起使用。
+
+本以为这样就OK了，但在实际使用过程中，这样设置还是不行，查阅了不少资料才发现，原来还有一个注册表里的信息需要修改，这样带能让excel不再使用前8行的内容来确定该列的类型。
+注册表修改内容如下：
+在HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Jet\4.0\Engines\Excel有一个TypeGuessRows值,预设是8,表示会先读取前8列来决定每一个栏位的型态,所以如果前8列的资料都是数字,到了第9列以后出现的文字资料都会变成null,所以如果要解决这个问题,只要把TypeGuessRows机码值改成0,就可以解这个问题了。 
