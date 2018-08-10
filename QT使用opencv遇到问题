@@ -4,3 +4,12 @@ qmake：根据实际环境创建项目文件.pro   并且运行qmake生成适当
 运行: 有改动则根据已有的Makefile进行编译，执行构建和重新构建时如果没有Makefile，会根据.pro文件等生成Makefile后再编译
 
 在.pro添加好路径后，需要先qmake，再构建，就好了。
+
+QT里的.pro文件，换行需要在行尾添加“ \”。
+
+
+问题：程序编译生成通过，运行时却提示“cdb.exe”错误之类的提示，直接打开debug里面的exe程序，提示缺少dll文件。
+1.“无法启动此程序，因为计算机中丢失opencv_world310.dll。请尝试重新安装改程序已解决此问题”
+解决办法：将bin目录(D:\Program_Files\Qt\opencv_3_3\opencv\build\x64\vc14\bin)中的3个dll文件复制在（C:\Windows\System32）或者(C:\Windows\SysWOW64)中。
+2.“无法启动此程序，因为计算机中丢失Qt5Widgetsd.dll。请尝试重新安装改程序已解决此问题”
+解决办法：在系统环境变量中，PATH后添加路径：D:\Program_Files\Qt\Qt5.9.2\5.9.2\msvc2015_64\bin;D:\Program_Files\Qt\Qt5.9.2\Tools\QtCreator\bin
