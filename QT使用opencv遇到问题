@@ -13,3 +13,5 @@ QT里的.pro文件，换行需要在行尾添加“ \”。
 解决办法：将bin目录(D:\Program_Files\Qt\opencv_3_3\opencv\build\x64\vc14\bin)中的3个dll文件复制在（C:\Windows\System32）或者(C:\Windows\SysWOW64)中。
 2.“无法启动此程序，因为计算机中丢失Qt5Widgetsd.dll。请尝试重新安装改程序已解决此问题”
 解决办法：在系统环境变量中，PATH后添加路径：D:\Program_Files\Qt\Qt5.9.2\5.9.2\msvc2015_64\bin;D:\Program_Files\Qt\Qt5.9.2\Tools\QtCreator\bin
+
+QT5使用QSerialPort，需要在.pro添加“QT += serialport”。
