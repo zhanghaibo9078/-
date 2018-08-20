@@ -15,3 +15,5 @@ QT里的.pro文件，换行需要在行尾添加“ \”。
 解决办法：在系统环境变量中，PATH后添加路径：D:\Program_Files\Qt\Qt5.9.2\5.9.2\msvc2015_64\bin;D:\Program_Files\Qt\Qt5.9.2\Tools\QtCreator\bin
 
 QT5使用QSerialPort，需要在.pro添加“QT += serialport”。
+
+QT中同信号多次连接同槽，会导致一次信号发送，多次调用槽函数。
