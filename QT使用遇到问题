@@ -17,3 +17,7 @@ QT里的.pro文件，换行需要在行尾添加“ \”。
 QT5使用QSerialPort，需要在.pro添加“QT += serialport”。
 
 QT中同信号多次连接同槽，会导致一次信号发送，多次调用槽函数。
+
+QImage用法；
+uchar *buffer = new uchar[width*height];
+QImage img(buffer,width,height,QImage::Format_Grayscale8);
