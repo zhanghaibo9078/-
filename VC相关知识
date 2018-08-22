@@ -3,3 +3,5 @@
 https://blog.csdn.net/u011555996/article/details/78013752
 
 C#调用opencv方法：https://blog.csdn.net/zhangzhe_0305/article/details/78399224
+
+经验：C#调用C++ dll时，bool返回值始终为true
