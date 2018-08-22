@@ -1,3 +1,5 @@
 在OnEraseBkGnd中,如果你不调用原来缺省的OnEraseBkGnd只是重画背景则不会有闪烁.而在OnPaint里面,由于它隐含的调用了OnEraseBkGnd,而你又没有处理OnEraseBkGnd 函数,这时就和窗口缺省的背景刷相关了.缺省的 OnEraseBkGnd操作使用窗口的缺省背景刷刷新背景(一般情况下是白刷),而随后你又自己重画背景造成屏幕闪动.
 如果你调用Invalidate的时候参数为TRUE,那么在OnPaint里面隐含调用BeginPaint的时候就产生WM_ERASEBKGND消息,如果参数是FALSE,则不会重刷背景.
 https://blog.csdn.net/u011555996/article/details/78013752
+
+C#调用opencv方法：https://blog.csdn.net/zhangzhe_0305/article/details/78399224
