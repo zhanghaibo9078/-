@@ -13,3 +13,4 @@ Sometimes such problems can also be caused by a misconfigured firewall。”
 若还有问题，重启Ubuntu。
 
 输入命令ps -e |grep ssh查看已打开服务，是否有sshd。
+参考文献：https://blog.csdn.net/wing_7/article/details/79326407
