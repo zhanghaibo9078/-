@@ -11,3 +11,5 @@ Sometimes such problems can also be caused by a misconfigured firewall。”
 关闭ssh命令：“/etc/init.d/ssh stop”
 
 若还有问题，重启Ubuntu。
+
+输入命令ps -e |grep ssh查看已打开服务，是否有sshd。
