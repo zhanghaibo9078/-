@@ -1,3 +1,11 @@
-1.启动网卡：ifconfig eth0 up
-2.配置ip地址：ifconfig eth0 192.168.2.10
+1.临时启动网卡：ifconfig eth0 up
+2.临时配置ip地址：ifconfig eth0 192.168.2.10
 3.启动telnet：telnetd&
+4.报错“Read-only file system”，问题发生在我使用tftp传输文件时，
+  后来验证海思板内创建文件及文件夹时都会报这个错误，
+  问题原因是文件系统没有写的权限需要通过命令打开，
+  启动权限的命令为：mount -o remount rw / (这一步是让“/”根文件系统重新挂载并有可读写模式)
+5.tftp传输文件：
+  海思板为客户端，windows为服务端。
+  打开tftpd32.exe，Current Directory选择要传送文件所在的文件夹路径，Server interfaces选择windows的主机ip地址。
+  在海思板连接成功后，输入命令：tftp -r venc -g 192.168.3.5
