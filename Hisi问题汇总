@@ -20,3 +20,7 @@
 9.解压：
   tar xvf FileName.tar
   rar x FileName.rar 
+10.新建文件：vi test；
+   删除文件：rm test；
+   创建文件夹：mkdir test；
+   删除文件夹：rm -rf test；
