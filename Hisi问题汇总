@@ -9,3 +9,8 @@
   海思板为客户端，windows为服务端。
   打开tftpd32.exe，Current Directory选择要传送文件所在的文件夹路径，Server interfaces选择windows的主机ip地址。
   在海思板连接成功后，输入命令：tftp -r venc -g 192.168.3.5
+6.查看文件及文件的操作权限：ls -l
+7.修改权限：
+  r=4,w=2,x=1，各占1bit；
+  chmod 777 xx是将xx所有用户的权限均设置为可写可读可执行；
+  第一个7代表当前用户，第二个代表当前用户组，第三个代表其他用户。
