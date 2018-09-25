@@ -29,3 +29,4 @@
 13.etc没有sysconfig文件：该文件只在红帽系列里有，在ubuntu里是/etc/network/interfaces
 14.更改用户密码：passwd
 15.网络接口配置：/etc/network/interfaces
+16.台式机使用usb转网口连接路由器，虚拟机采用该网口进行桥接模式不能正常使用，只能用台式机自带的网口才能正常工作，不知其由。
