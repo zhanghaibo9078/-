@@ -25,3 +25,5 @@
    创建文件夹：mkdir test；
    删除文件夹：rm -rf test；
 11.查看ubuntu版本：cat /etc/issue
+12.虚拟机网卡只有eth2：ubuntu是在虚拟机里安装的，刚开始正常，后来添加一块网卡（虚拟的），然后eth0就消失了，只有eth1和eth2了。原来问题出在：文件/etc/udev/rules.d/70-persistent-net.rules中。由于以前可以更改过MAC地址，所以70-persistent-net.rules中仍然保留了老网卡的内容，新网卡则被识别为eth1，eth2。将表示老网卡的行注释掉，然后将表示新网卡的行中eth1改成eth0，eth2改为eth1重启即可。
+13.
