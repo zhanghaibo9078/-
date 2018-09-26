@@ -37,3 +37,5 @@
 21.arm板开机自动配置ip：修改/etc/init.d/rcS文件，rcS文件是系统启动时执行的命令行集合。添加/sbin/ifconfig eth0 up和/sbin/ifconfig eth0 192.168.2.20，即可。
 22.arm板启动默认文件系统可读写：修改/etc/init.d/rcS文件，添加/bin/mount -o remount rw /
 23.arm挂载服务器端文件：mount -t nfs -o nolock 192.168.2.109:/root/hi3519/nfs /home
+24.arm板运行./sample_venc，提示错误can't load library '/root/hi3519/mpp_big-little/lib/libsns_imx274.so'。
+    解决办法：将libsns_imx274.so文件拷贝到arm板的/lib路径或者/usr/lib路径都可以。
