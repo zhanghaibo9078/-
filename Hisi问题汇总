@@ -33,3 +33,4 @@
 17.NFS挂载：只能挂载用户名文件夹下的内容，包括/root
 18.查看ubuntu内核版本及系统位数：uname -a。i686代表32位系统。
 19.查看ubuntu版本信息：cat /etc/issue
+20.查看arm板硬件参数：cat /proc/cpuinfo
