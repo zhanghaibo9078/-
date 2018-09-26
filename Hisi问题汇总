@@ -34,3 +34,4 @@
 18.查看ubuntu内核版本及系统位数：uname -a。i686代表32位系统。
 19.查看ubuntu版本信息：cat /etc/issue
 20.查看arm板硬件参数：cat /proc/cpuinfo
+21.arm板开机自动配置ip：修改/etc/init.d/rcS文件，rcS文件是系统启动时执行的命令行集合。添加/sbin/ifconfig eth0 up和/sbin/ifconfig eth0 192.168.2.20，即可。
