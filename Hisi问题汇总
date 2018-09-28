@@ -40,3 +40,5 @@
 24.arm板运行./sample_venc，提示错误can't load library '/root/hi3519/mpp_big-little/lib/libsns_imx274.so'。
     解决办法：将libsns_imx274.so文件拷贝到arm板的/lib路径或者/usr/lib路径都可以。
 25.arm默认加载ko：拷贝ko文件夹所有内容到开发板/目录下，修改/etc/init.d/rcS文件，添加cd /ko;./load3519v101 -a -sensor0 imx274 -osmem 128 -total 512 -offline
+26.makefile----------.PHONY是一个伪目标，可以防止在Makefile中定义的只执行命令的目标和工作目录下的实际文件出现名字冲突，另一种是提交执行makefile时的效率。
+                     个人见解，.PHONY是为了防止路径下有与命令相同的文件，导致命令无法执行。
