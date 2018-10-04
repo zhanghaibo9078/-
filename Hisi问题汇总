@@ -42,3 +42,18 @@
 25.arm默认加载ko：拷贝ko文件夹所有内容到开发板/目录下，修改/etc/init.d/rcS文件，添加cd /ko;./load3519v101 -a -sensor0 imx274 -osmem 128 -total 512 -offline
 26.makefile----------.PHONY是一个伪目标，可以防止在Makefile中定义的只执行命令的目标和工作目录下的实际文件出现名字冲突，另一种是提交执行makefile时的效率。
                      个人见解，.PHONY是为了防止路径下有与命令相同的文件，导致命令无法执行。
+27.运行MPP业务：
+   # 在单板linux系统下，进入mpp/ko目录，加载驱动
+   cd mpp_xxx/ko
+   # default online
+   ./load3519v101 -a -sensor0 mn34220 -osmem 64
+   Hi3519V101在online模式下只支持一个sensor。
+   # vi_vpss offline
+   ./load3519v101 -a -sensor0 mn34220 -sensor1 ov4689 -osmem 64 -offline -workmode double_pipe
+   Hi3519V101在offline模式支持两个sensor输入。分别由-sensor0和-sensor1指定所使用的sensor型号。如果只使用一个sensor，可以只指定-sensor0或-sensor1其中一个，另外一个不需要指定。
+   -workmode选项表示两个VI设备的工作模式，可以选择stitching、double_pipe或single_pipe，double_pipe表示两个VI设备处于double_pipe拍照模式，stitching表示两个VI设备处于双路拼接模式，
+   single_pipe表示两个VI设备单独工作。默认为single_pipe模式。
+
+   # 进入各sample目录下执行相应样例程序(sample需要先在服务器上成功编译过)
+   cd mpp_xxx/sample/vio
+   ./sample_vio 0 1
