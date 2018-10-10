@@ -59,3 +59,4 @@
    ./sample_vio 0 1
 28.挂载nfs时提示permission denied：修改/etc/exports 文件，添加如下内容……/nfs *(insecure,rw,sync,no_root_squash);运行#/usr/sbin/exportfs –a
 29.Ubuntu和windows不能相互复制问题：首先需要安装vmware_tools，安装后不行，需要运行命令：/usr/bin/vmware-user
+30.Sensor1接不到数据的原因：在启动文件中要配置workmode为双相机，该配置断电才失效，reboot不失效。
