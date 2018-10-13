@@ -22,3 +22,11 @@
   }
 
 6.去除对话框回车或Esc退出软件，添加虚函数OnOK()和OnCancel()，将两个函数中的处理语句都注释掉。
+
+7.禁用鼠标：
+  CPoint pMouse;  GetCursorPos(&pMouse);
+  RECT rectMouse = {pMouse.x,pMouse.y,pMouse.x,pMouse.y};
+  ClipCursor(&rectMouse);
+  启用鼠标：
+  ClipCursor(NULL);
+8.隐藏鼠标：ShowCursor(false); 显示鼠标：ShowCursor(true);
