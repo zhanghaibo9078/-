@@ -7,3 +7,17 @@ C#调用opencv方法：https://blog.csdn.net/zhangzhe_0305/article/details/78399
 经验：C#调用C++ dll时，bool返回值始终为true
 
 C++创建线程出错：线程的函数一定要为static。
+
+实现键盘响应事件，在类向导添加PreTranslateMessage虚函数，在函数体内进行判断按键即操作：
+if(pMsg->message==WM_KEYDOWN)
+{
+  switch(pMsg->wParam)
+  {
+  case VK_ESCAPE:
+    (function)
+    break;
+  default:
+    break;
+  }
+}
+
