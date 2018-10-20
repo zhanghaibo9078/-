@@ -36,3 +36,7 @@
         dram大小为16行数据，1080除不尽16，写入端地址每帧清0，读出端每帧不清除，所以每帧抖动一次。
     解决办法：
         读出端程序在每帧开始从第0地址读取。
+4.
+    If a port is assigned a differential IOSTANDARD and no IBUFDS is attached to the ports, MAP will fail with the above error.
+    The solution is to add an IBUFDS to the differential port.
+    需要在程序添加IBUFG
