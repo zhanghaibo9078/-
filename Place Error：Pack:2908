@@ -1,3 +1,0 @@
-If a port is assigned a differential IOSTANDARD and no IBUFDS is attached to the ports, MAP will fail with the above error.
-The solution is to add an IBUFDS to the differential port.
-需要在程序添加IBUFG
