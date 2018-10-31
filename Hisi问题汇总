@@ -63,3 +63,5 @@
 31.UART调试：
    打开Hi3519v101_PINOUT_CN.xlsx，从1.管脚信息标查找UART4所对应的复用寄存器和驱动能力寄存器；
    配置复用寄存器（muxctrl_reg40）为UART。除UART0意外，均不需要配置驱动寄存器（pad_ctrl_reg_43）。
+32.海思视频压缩模式支持10bit视频输入，但是不支持10bit视频输出，除了3559a，最高只支持main profile模式，就算是3559a支持main 10 profile，也不能保证输出的视频是10bit视频流。
+
