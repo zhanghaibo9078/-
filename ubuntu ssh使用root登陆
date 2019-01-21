@@ -1,5 +1,7 @@
-ssh服务安装好并启动后，win7端的ssh可以通过Ubuntu非root用户进行访问，若要采用root进行访问，需要修改如下内容。
-root@ubuntu:/#vim /etc/ssh/sshd_config
-在Authentication部分，注释掉“PermitRootLogin without-password”，
-并添加“PermitRootLogin yes”。
-重启ssh或Ubuntu就ok。
+1.ubuntu ssh使用root登陆：
+  ssh服务安装好并启动后，win7端的ssh可以通过Ubuntu非root用户进行访问，若要采用root进行访问，需要修改如下内容。
+  root@ubuntu:/#vim /etc/ssh/sshd_config
+  在Authentication部分，注释掉“PermitRootLogin without-password”，
+  并添加“PermitRootLogin yes”。
+  重启ssh或Ubuntu就ok。
+2.VMWare新建和使用时，需要关闭防火墙，以win7兼容模式运行，以管理员身份运行。
