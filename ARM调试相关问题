@@ -5,3 +5,4 @@
   并添加“PermitRootLogin yes”。
   重启ssh或Ubuntu就ok。
 2.VMWare新建和使用时，需要关闭防火墙，以win7兼容模式运行，以管理员身份运行。
+3.VMWare的虚拟机文件系统，需要放在默认路径下才能打开，真神奇
