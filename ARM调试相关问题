@@ -13,3 +13,10 @@
     O 一般模式  为在目前光标所在处的上一行输入新的一行！
 6.如何解决虚拟机ping不同主机，主机可以ping通虚拟机
   在控制面板--》windows防火墙--》高级设置--》入站规则--》文件和打印共享（回显请求-ICMPv4-In）设置为允许。
+7.安装sshd：
+  sudo apt install openssh-server
+8.查看sshd是否已启动：
+  sudo ps -e |grep ssh
+9.启动sshd：
+  sudo service sshd start或sudo /etc/init.d/ssh start
+  
