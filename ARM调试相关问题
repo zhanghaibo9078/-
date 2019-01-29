@@ -19,4 +19,14 @@
   sudo ps -e |grep ssh
 9.启动sshd：
   sudo service sshd start或sudo /etc/init.d/ssh start
-  
+10.SSH-连接虚拟机报错server responded algorithm negotiation failed
+  修改ssh的配置文件
+  vim /etc/ssh/sshd_config
+  #允许root用户登录，将“PermitRootLogin without-password”更改为
+  PermitRootLogin yes
+  在配置文件中添加如下内容
+  Ciphers aes128-cbc,aes192-cbc,aes256-cbc,aes128-ctr,aes192-ctr,aes256-ctr,3des-cbc,arcfour128,arcfour256,arcfour,blowfish-cbc,cast128-cbc
+  MACs hmac-md5,hmac-sha1,umac-64@openssh.com,hmac-ripemd160,hmac-sha1-96,hmac-md5-96
+  KexAlgorithms diffie-hellman-group1-sha1,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1,diffie-hellman-group-exchange-sha256,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group1-sha1,curve25519-sha256@libssh.org 
+  保存并退出后重启sshd服务 
+  sudo service ssh restart 
