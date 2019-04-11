@@ -41,3 +41,5 @@
 11.
   C#调用fixed使用unsafe语句时，报错“指针和固定大小缓冲区只能在不安全的上下文中使用”。
   解决办法：将调用地方的函数使用unsafe声明。
+12.VS2015 MFC 之 打包部署
+  https://blog.csdn.net/cheer_zhang/article/details/79047680
