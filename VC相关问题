@@ -43,3 +43,5 @@
   解决办法：将调用地方的函数使用unsafe声明。
 12.VS2015 MFC 之 打包部署
   https://blog.csdn.net/cheer_zhang/article/details/79047680
+  查看软件依赖dll
+  >dumpbin /dependents  F:\xxx.exe
