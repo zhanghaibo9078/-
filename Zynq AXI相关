@@ -10,3 +10,5 @@
   5) 不支持独占访问
 3.Zynq构建SoC系统深度学习笔记-04-PL中创建AXI Master接口IP(1)：https://www.eefocus.com/antaur/blog/17-08/423751_6cc0d.html
 4.AXI由5个通道组成，写地址、写数据、写响应、读地址、读数据，5个通道都有自己独立的控制线，独立操作。
+5.bresp为00，表示操作成功；bresp[1]为1，表示操作失败。
+6.这个博客讲了些AXI的知识：http://blog.sina.com.cn/s/articlelist_2204628963_0_1.html
