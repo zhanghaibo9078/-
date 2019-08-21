@@ -198,3 +198,40 @@
     未解：在FPGA对HS、VS下拉无效。
 19.
     PAL输出格式为奇偶场交叠，先发顶场再发底场，顶场为1、3、5、7……，底场为2、4、6、8……
+20.
+    时间：2019年08月16日
+    地点：一试验室
+    人物：张海波
+    问题类型：军懋相机高低温未通过
+    问题描述：
+        高低温情况，程序均能启动，图像未成功输出。
+    问题分析：
+        4通道数据有相位差；
+        低温时sensor输出时钟锁相不稳定。
+    解决办法：
+        通道独立slip；
+        采用fpga时钟给sensor及采样。
+20.
+    vivado配置程序启动速率：
+    (1)纯FPGA
+    #bit compress spix4 speed up
+    #当 CFGBVS 连接至 Bank 0 的 VCCO 时，Bank 0 的 VCCO 必须为 2.5V 或 3.3V
+    set_property CFGBVS VCCO [current_design]
+    #设置CONFIG_VOLTAGE 也要配置为3.3V
+    set_property CONFIG_VOLTAGE 3.3 [current_design]
+    #设置bit是否压缩
+    set_property BITSTREAM.GENERAL.COMPRESS true [current_design]
+    #设置QSPI的加载时钟
+    set_property BITSTREAM.CONFIG.CONFIGRATE 50 [current_design]
+    #设置QSPI的位宽
+    set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
+    #设置QPSI的数据加载时钟边沿
+    set_property BITSTREAM.CONFIG.SPI_FALL_EDGE Yes [current_design]
+    (2)ZYNQ
+    zynq芯片加载速度比较慢，那么压缩bit后可以显著提高加载速度
+    #bit compress
+    set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
+    set_property CFGBVS VCCO [current_design]
+    set_property CONFIG_VOLTAGE 3.3 [current_design]
+    对于ZYNQ芯片至少得有fsbl和bit一起产生boot.bin才可以正常启动，这个和纯FPGA不一样。
+21.
