@@ -45,3 +45,10 @@
   https://blog.csdn.net/cheer_zhang/article/details/79047680
   查看软件依赖dll
   >dumpbin /dependents  F:\xxx.exe
+13.
+  显示图片大小发生变化时，会有残留图像在界面，消除的方法：
+  CStatic* pStatic = (CStatic*)GetDlgItem(IDC_STATIC_CAPTURE_PIC);
+  CRect IRect;
+  pStatic->GetClientRect(&IRect);
+  pStatic->GetDC()->FillSolidRect(IRect.left, IRect.top, IRect.Width(), IRect.Height(), RGB(215, 220, 243));
+14.
